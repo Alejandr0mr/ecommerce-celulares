@@ -1,3 +1,88 @@
 .iconoUsuario{
     margin-right: 2rem;
 }
+.logo-img{
+    width: 40px; /* Ancho deseado */
+  height: auto; /* Altura ajustada automáticamente */
+  margin-right:  1rem;
+}
+
+.iconoUsuario,
+.iconoCarrito {
+  cursor: pointer;
+  position: relative;
+}
+.iconoUsuario:hover,
+.iconoCarrito:hover {
+  transform: scale(1.3); /* Cambia el tamaño al 120% al pasar el mouse */
+}
+
+.iconoCarrito {
+    position: relative; /* Establece la posición relativa */
+  }
+  
+  .iconoCarrito::after {
+    content: "Carrito"; /* Agrega el texto que deseas mostrar */
+    position: absolute; /* Establece la posición absoluta con respecto al icono */
+    top: 50%; /* Ubica el texto en la mitad verticalmente */
+    left: calc(100% + 8px); /* Lo coloca a la derecha del icono con un pequeño espacio */
+    transform: translateY(-50%); /* Centra verticalmente el texto */
+    padding: 3px; /* Agrega un poco de espacio alrededor del texto */
+    background-color: transparent; /* Color de fondo del texto */ 
+    border-radius: 3px; /* Añade bordes redondeados al contenedor del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+    opacity: 0; /* Oculta inicialmente el texto */
+    transition: opacity 0.3s; /* Agrega una transición suave para mostrar/ocultar el texto */
+  }
+  
+  .iconoCarrito:hover::after {
+    opacity: 1; /* Muestra el texto al pasar el mouse sobre el icono */
+  }
+  
+  .iconoUsuario {
+    position: relative; /* Establece la posición relativa */
+  }
+  
+  .iconoUsuario::after {
+    content: "Ingresar"; /* Agrega el texto que deseas mostrar */
+    position: absolute; /* Establece la posición absoluta con respecto al icono */
+    top: 50%; /* Ubica el texto en la mitad verticalmente */
+    left: calc(100% - 77px); /* Lo coloca a la derecha del icono con un pequeño espacio */
+    transform: translateY(-50%); /* Centra verticalmente el texto */
+    padding: 3px; /* Agrega un poco de espacio alrededor del texto */
+    background-color: transparent; /* Color de fondo del texto */
+    border-radius: 3px; /* Añade bordes redondeados al contenedor del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+    opacity: 0; /* Oculta inicialmente el texto */
+    transition: opacity 0.3s; /* Agrega una transición suave para mostrar/ocultar el texto */
+  }
+  
+  .iconoUsuario:hover::after {
+    opacity: 1; /* Muestra el texto al pasar el mouse sobre el icono */
+  }
+
+  .navbar-nav .nav-link:hover, .iconoCarrito:hover, .iconoUsuario:hover {
+    color: #90e0ef !important; /* Cambia el color del texto al pasar el mouse */
+  }
+  
+  #nav {
+    background-color: #0077b6;
+    
+  }
+.navbar-nav .nav-link, .iconoCarrito,  .iconoUsuario, .titulo .navbar-brand {
+    color: #ffffff !important; /* Cambia el color del texto a blanco */
+  }
+
+  .btn-outline-primary {
+    background-color: #0077b6; /* Cambia el color de fondo del botón a azul */
+    color: #fff; /* Cambia el color del texto del botón a blanco */
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #0056b3; /* Cambia el color de fondo del botón a azul oscuro al pasar el mouse */
+  }
+
+  
+  .navbar .btn-outline-primary {
+    border: none; /* Elimina el borde del botón */
+  }
