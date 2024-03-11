@@ -7,10 +7,12 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import './HeaderStyles.css'
 import logo from './logo.png'
 import mi from './mi.ico'
+
+
 function Navbar() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-thick" id='nav'>
+            <nav className="navbar navbar-expand-lg" id='nav'>
                 <div className="container">
                     <div className='titulo'>
                         <div className="d-flex align-items-center">
@@ -25,7 +27,7 @@ function Navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
+                            <li className="nav-item">   
                                 <Link className="nav-link" to="/">Inicio</Link>
                             </li>
                             <li className="nav-item">
