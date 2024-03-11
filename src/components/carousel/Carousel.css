@@ -1,0 +1,43 @@
+#poco {
+    position: absolute;
+    top: 0;
+    left: 20rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: black;
+  }
+
+  #mi {
+    position: absolute;
+    top: 0;
+    left: -20rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: black;
+  }
+
+  #redmi{
+    position: absolute;
+    top: 0;
+    left: -20rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: black;
+  }
+
+  
