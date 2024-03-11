@@ -14,7 +14,7 @@ function Redmi() {
 
   return (
     <div>
-        <hr/>
+        <hr className='mb-4 container' />
       <div className='divProductos'>
         {products}
       </div>
