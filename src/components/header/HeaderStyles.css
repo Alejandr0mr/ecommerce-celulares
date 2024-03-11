@@ -6,6 +6,11 @@
   height: auto; /* Altura ajustada automáticamente */
   margin-right:  1rem;
 }
+.logo-mi{
+  width: 23px; /* Ancho deseado */
+  height: auto; /* Altura ajustada automáticamente */
+
+}
 
 .iconoUsuario,
 .iconoCarrito {
@@ -62,26 +67,22 @@
   }
 
   .navbar-nav .nav-link:hover, .iconoCarrito:hover, .iconoUsuario:hover {
-    color: #90e0ef !important; /* Cambia el color del texto al pasar el mouse */
+    color: white !important; /* Cambia el color del texto al pasar el mouse */
   }
   
   #nav {
-    background-color: #0077b6;
+    background-color: #ff7d00;
     
   }
-.navbar-nav .nav-link, .iconoCarrito,  .iconoUsuario, .titulo .navbar-brand {
-    color: #ffffff !important; /* Cambia el color del texto a blanco */
+.navbar-nav .nav-link, .iconoCarrito,  .iconoUsuario, .titulo .navbar-brand, .lupa {
+    color: black !important; /* Cambia el color del texto a blanco */
   }
 
-  .btn-outline-primary {
-    background-color: #0077b6; /* Cambia el color de fondo del botón a azul */
-    color: #fff; /* Cambia el color del texto del botón a blanco */
-  }
+
   
   .btn-outline-primary:hover {
-    background-color: #0056b3; /* Cambia el color de fondo del botón a azul oscuro al pasar el mouse */
+    background-color: white !important; /* Cambia el color de fondo del botón a azul oscuro al pasar el mouse */
   }
-
   
   .navbar .btn-outline-primary {
     border: none; /* Elimina el borde del botón */

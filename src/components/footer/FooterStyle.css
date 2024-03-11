@@ -1,14 +1,10 @@
 p a:hover{
     
-    color: #03045E !important
+    color: white !important;
 }
 footer{
-    background-color: #0077B6;
+    background-color: #ff7d00;
 }
 hr{
-    color: white !important;
-}
-
-p a strong{
-    color: white !important;
+    color: black !important;
 }
