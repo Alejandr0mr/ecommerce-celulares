@@ -40,4 +40,13 @@
     color: black;
   }
 
+
+  .divCarousel{
+    display: flex;
+    margin: 2%;
+    padding: 2%;
+    flex-flow: row wrap;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    border-radius: 9px;
+}
   

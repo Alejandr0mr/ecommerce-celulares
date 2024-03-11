@@ -10,7 +10,7 @@ import mi from './mi.ico'
 function Navbar() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg" id='nav'>
+            <nav className="navbar navbar-expand-lg navbar-thick" id='nav'>
                 <div className="container">
                     <div className='titulo'>
                         <div className="d-flex align-items-center">
