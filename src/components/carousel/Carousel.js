@@ -29,7 +29,7 @@ function Carousel() {
             <img src="https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-13t/pc/3231f876d65d2830eeef385568823fe1.jpg?q=100" alt="Chicago" className="d-block w-100" />
             <div className="carousel-caption" id='mi'>
               <h3>XIAOMI</h3>
-              <p>Thank you, Chicago!</p>
+              <p>Lo mejor de xiaomi</p>
             </div>
           </div>
           <div className="carousel-item" data-bs-interval="5000">

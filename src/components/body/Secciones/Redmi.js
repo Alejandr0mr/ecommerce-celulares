@@ -18,6 +18,7 @@ function Redmi() {
       <div className='divProductos'>
         {products}
       </div>
+      <hr className='mb-4 container' />
     </div>
   );
 }
