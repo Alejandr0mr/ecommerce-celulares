@@ -49,4 +49,15 @@
     border-radius: 9px;
 
 }
+@media (max-width: 768px){
+  .divcarousel {
+    min-height: 230px;
+}
+}
+
+@media (min-width: 768px){
+  .divcarousel {
+    min-height: 400px;
+}
+}
 
