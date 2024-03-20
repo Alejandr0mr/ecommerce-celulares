@@ -4,16 +4,15 @@ import Body from './body/Body'
 import Footer from './footer/Footer'
 import Carousel from './carousel/Carousel'
 import ListaProductos from './body/products/ListaProductos'
-import Redmi from './body/Secciones/Redmi'
+import Destacado from './body/Secciones/Destacado'
 
 function Index() {
   return (
     <div>
         <Header/>
         <Carousel/>
-        <Redmi/>
+        <Destacado/>
         <ListaProductos/>
-
         <Footer/>
 
     </div>

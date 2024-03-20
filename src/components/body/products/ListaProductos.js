@@ -1,10 +1,10 @@
 import React from 'react'
 import Productos from './Productos'
-import Data from './Data'
+import Celulares from './Celulares'
 import './ProductosStyle.css'
 
 function ListaProductos() {
-  const products = Data.map(items => {
+  const celulares = Celulares.map(items => {
     return(
       <Productos key={items.id} items={items} />
     )
@@ -12,7 +12,7 @@ function ListaProductos() {
   return (
     <div>
       <div className='divProductos'>
-        {products}
+        {celulares}
       </div>
     </div>
   )

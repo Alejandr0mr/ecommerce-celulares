@@ -1,45 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 
-#poco {
-  position: absolute;
-  top: 0;
-  left: 20rem;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-}
-
-#mi {
-  position: absolute;
-  top: 0;
-  left: -20rem;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-}
-
-#redmi {
-  position: absolute;
-  top: 0;
-  left: -20rem;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-}
-
-
-  .divCarousel{
+.divCarousel{
     display: flex;
     margin: 2%;
     padding: 2%;
@@ -49,15 +11,71 @@
     border-radius: 9px;
 
 }
-@media (max-width: 768px){
-  .divcarousel {
-    min-height: 230px;
-}
+#poco {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  h4{
+    font-family: "Secular One", sans-serif;
+  font-size: 40px; 
+  color: #333; 
+  }
+
+  p{
+      font-family: Arial, sans-serif; 
+      font-size: 24px; 
+      color: #666;
+  }
+  
 }
 
-@media (min-width: 768px){
-  .divcarousel {
-    min-height: 400px;
-}
+#xiaomi {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  h4{
+    font-family: "Anek Gujarati", sans-serif;
+  font-size: 40px; 
+  color: #333; 
+  }
+
+  p{
+      font-family: Arial, sans-serif; 
+      font-size: 24px; 
+      color: #666;
+  }
+  
 }
 
+#redmi {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  h4{
+    font-family: "Anek Gujarati", sans-serif;
+  font-size: 40px; 
+  color: #333; 
+  }
+
+  p{
+      font-family: Arial, sans-serif; 
+      font-size: 24px; 
+      color: #666;
+  }
+}
+
+h1{
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}

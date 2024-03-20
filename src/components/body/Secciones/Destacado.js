@@ -1,9 +1,9 @@
 import React from 'react';
 import Productos from '../products/Productos';
-import Data from '../products/Data';
+import Data from '../products/Celulares';
 import '../products/ProductosStyle.css';
 
-function Redmi() {
+function Destacado() {
   // Obtener los productos del 1 al 2
   const productosSubconjunto = Data.slice(0, 2);
 
@@ -23,4 +23,4 @@ function Redmi() {
   );
 }
 
-export default Redmi;
+export default Destacado;
