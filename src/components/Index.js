@@ -3,7 +3,7 @@ import Header from './header/Header'
 import Body from './body/Body'
 import Footer from './footer/Footer'
 import Carousel from './carousel/Carousel'
-import ListaProductos from './body/products/ListaProductos'
+import ListaCelulares from './body/products/ListaCelulares'
 import Destacado from './body/Secciones/Destacado'
 
 function Index() {
@@ -12,7 +12,7 @@ function Index() {
         <Header/>
         <Carousel/>
         <Destacado/>
-        <ListaProductos/>
+        {/* <ListaCelulares/> */}
         <Footer/>
 
     </div>

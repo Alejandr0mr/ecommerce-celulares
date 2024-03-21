@@ -1,12 +1,12 @@
 import React from 'react'
-import Productos from './Productos'
 import Celulares from './Celulares'
+import DataCelulares from './DataCelulares'
 import './ProductosStyle.css'
 
-function ListaProductos() {
-  const celulares = Celulares.map(items => {
+function ListaCelulares() {
+  const celulares = DataCelulares.map(items => {
     return(
-      <Productos key={items.id} items={items} />
+      <Celulares key={items.id} items={items} />
     )
   })
   return (
@@ -18,4 +18,4 @@ function ListaProductos() {
   )
 }
 
-export default ListaProductos
+export default ListaCelulares
