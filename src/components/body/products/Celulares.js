@@ -10,6 +10,7 @@ function Celulares(props) {
         <p className="card-text">Precio: ${props.item.precio} COP</p>
         <button type="button" className="btn btn-success">Ver más</button>
       </div>
+
     </div>
   );
 }
