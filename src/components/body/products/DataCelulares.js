@@ -1,6 +1,7 @@
 import Mi13T from './img/Mi13T.png'
 import redmi13pro from './img/redmi13pro+.png'
 import pocoX5 from './img/pocoX5.png'
+import mi12lite from './img/xioami12lite.webp'
 
 export default [
     {
@@ -43,6 +44,21 @@ export default [
         "ram": "8 GB",
         "pantalla": "AMOLED DotDisplay de 6,67", 
         "descripcion": "El POCO X5 5G ofrece un rendimiento potente y una experiencia de usuario fluida. Con su pantalla AMOLED DotDisplay de 6,67 pulgadas y una tasa de refresco de 120 Hz, disfrutarás de una visualización inmersiva y fluida. Además, su cámara principal de 48MP te permite capturar fotos y videos de alta calidad. La batería de 5000 mAh te da la libertad de usar tu teléfono durante todo el día sin preocuparte por quedarte sin batería."
-      }
+      },
+
+      {
+        "id": 4,
+        "nombre": "Xiaomi 12 Lite",
+        "marca": "Xiaomi",
+        "imagen": mi12lite,
+        "precio": 1149900, 
+        "bateria": "4300 mAh",
+        "procesador": "Qualcomm Snapdragon 778G",
+        "almacenamiento": "256 GB",
+        "ram": "8 GB",
+        "pantalla": "AMOLED DotDisplay de 6,55", 
+        "descripcion": "El Xiaomi 12 Lite es un teléfono inteligente de gama media con un diseño elegante y moderno. Cuenta con un procesador de nivel medio-alto que proporciona un rendimiento sobresaliente. Además, su cámara principal de 108MP te permite capturar fotos y videos de alta calidad. La carga rápida de 67W te permite cargar tu teléfono rápidamente para que puedas seguir usándolo sin interrupciones."
+      },
+
 
 ]
