@@ -14,7 +14,6 @@ function Destacado() {
 
   return (
     <div>
-      <hr className='mb-4 container' />
       <div className='divSeccion'>
         <div className='container'>
           <h2 className='text-center' id='h2Destacado'>Accesorios Destacados</h2>
