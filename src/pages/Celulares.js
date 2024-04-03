@@ -2,12 +2,13 @@ import React from 'react'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
 import Carousel from '../components/carousel/Carousel'
+import ListaCelulares from '../components/body/Secciones/ListaCelulares/ListaCelulares'
 
 function Celulares() {
   return (
     <div>
         <Header/>
-            <h1>Acá se veran todos los celulares</h1>
+            <ListaCelulares/>
         <Footer/>
 
     </div>

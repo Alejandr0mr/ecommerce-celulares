@@ -2,7 +2,9 @@ import React from 'react'
 import Header from './header/Header'
 import Footer from './footer/Footer'
 import Carousel from './carousel/Carousel'
-import Destacado from './body/Secciones/Destacado'
+import Destacado from './body/Secciones/Destacado/Destacado'
+import Accesorios from './body/Secciones/Accesorios/DestacadoAccesorios'
+
 
 function Index() {
   return (
@@ -11,6 +13,7 @@ function Index() {
         <Carousel/>
 
         <Destacado/>
+        <Accesorios/>
         <Footer/>
 
     </div>

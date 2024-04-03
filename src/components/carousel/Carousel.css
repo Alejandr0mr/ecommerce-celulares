@@ -94,7 +94,3 @@ h1 {
     font-size: 0.8rem !important; /* Reducción del tamaño para pantallas más pequeñas */
   }
 }
-
-#carousel {
-  box-shadow: rgba(255, 125, 0, 0.35) 0px 5px 15px;
-}

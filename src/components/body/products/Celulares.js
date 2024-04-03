@@ -1,9 +1,8 @@
 import React from 'react';
-import './ProductosStyle.css';
-
 function Celulares(props) {
   return (
     <div className="card mb-2 text-center">
+
       <img src={props.item.imagen} className="card-img-top" alt="celular" />
       <div className="card-body">
         <h5 className="card-title">{props.item.nombre}</h5>
