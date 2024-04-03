@@ -1,17 +1,16 @@
-import React from 'react';
+import React from 'react'
+import Accesorios from '../../products/Accesorios'
+import DatosAccesorios from '../../products/DataAccesorios'
+import './ListaAccesorios.css'
 
-import DatosAccesorios from '../../products/DataAccesorios';
-import './DestacadoAccesorios.css';
-import Accesorios from '../../products/Accesorios';
-
-function DestacadoAccesorios() {
-  // Obtener los productos
-  const DataAccesorios = DatosAccesorios.slice(0, 4).map(item => (
+function ListaAccesorios() {
+  const DataAccesorios = DatosAccesorios.map(item => (
     <div key={item.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
       <Accesorios item={item}/>
     </div>
-
   ));
+  
+
 
   return (
     <div>
@@ -25,7 +24,7 @@ function DestacadoAccesorios() {
       </div>
       <hr className='mb-4 container' />
     </div>
-  );
+  )
 }
 
-export default DestacadoAccesorios;
+export default ListaAccesorios

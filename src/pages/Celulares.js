@@ -3,12 +3,14 @@ import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
 import Carousel from '../components/carousel/Carousel'
 import ListaCelulares from '../components/body/Secciones/ListaCelulares/ListaCelulares'
+import Informacion from '../components/body/Secciones/Informacion/Informacion'
 
 function Celulares() {
   return (
     <div>
         <Header/>
             <ListaCelulares/>
+            <Informacion/>
         <Footer/>
 
     </div>
