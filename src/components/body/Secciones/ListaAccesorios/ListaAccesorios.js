@@ -16,7 +16,7 @@ function ListaAccesorios() {
     <div>
       <div className='divSeccion'>
         <div className='container'>
-          <h2 className='text-center' id='h2Destacado'>Accesorios Destacados</h2>
+          <h2 className='text-center' id='h2Destacado'>Accesorios</h2>
         </div>
         <div className='row'>
           {DataAccesorios}

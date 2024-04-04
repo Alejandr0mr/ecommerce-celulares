@@ -8,10 +8,10 @@ function Carousel() {
   return (
 
 
-    <div className='divCarousel'>
+    <div className='divCarousel '>
 
       
-      <div className='container text-center mt-5 mb-5 '>
+      <div className='container text-center  mt-2 mb-2 '>
         <h1>Últimos lanzamientos</h1>
       </div>
       <div id="demo" className="carousel slide mb-4 align-items-center" data-bs-ride="carousel">

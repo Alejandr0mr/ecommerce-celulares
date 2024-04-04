@@ -33,7 +33,7 @@ function Navbar() {
                             </li>
                             
                             <li className="nav-item">
-                                <Link className="nav-link" to="/celulares">Celulares</Link>
+                                <Link className="nav-link"  to="/celulares">Celulares</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/accesorios">Accesorios</Link>
