@@ -28,7 +28,7 @@ function Login() {
           <div className="col-md-6 right-box">
             <div className="row align-items-center">
               <div className="header-text mb-4">
-                <h2>Hola, bienvenido devuelta</h2>
+                <h2>Hola, bienvenido </h2>
                 <p>Nos alegramos de verte de nuevo.</p>
               </div>
               <form>
