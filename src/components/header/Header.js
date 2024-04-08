@@ -44,10 +44,12 @@ function Navbar() {
                         </ul>
                         <div className="d-flex align-items-center me-auto">
                             <div className="iconoUsuario" title='Ingresar'>
-                                <FontAwesomeIcon icon={faUser} />
+                                <Link className="nav-link"  to="/login"><FontAwesomeIcon icon={faUser}/></Link> 
+                                
                             </div>
                             <div className='iconoCarrito' title='Carrito de compras'>
-                                <FontAwesomeIcon icon={faCartShopping} />
+                                
+                                <Link className="nav-link"  to="#"><FontAwesomeIcon icon={faCartShopping} /></Link> 
                             </div>
                         </div>
                         <form className="d-flex">

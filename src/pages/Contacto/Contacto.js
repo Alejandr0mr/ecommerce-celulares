@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Header from '../components/header/Header'
-import Footer from '../components/footer/Footer'
+import Header from '../../components/header/Header'
+import Footer from '../../components/footer/Footer'
 import './ContactoStyles.css'
 
 function Contacto() {
@@ -76,7 +76,7 @@ function Contacto() {
                             </div>
                         </div>
                         <div className="form-group text-center mt-2">
-                            <button type="submit" className="btnContact btn btn-success">
+                            <button type="submit" className="btnContact btn btn-custom">
                                 Enviar mensaje
                             </button>
                         </div>

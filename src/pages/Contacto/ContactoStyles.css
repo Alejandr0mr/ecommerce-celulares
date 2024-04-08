@@ -71,13 +71,14 @@ body {
     background-color: white;
 }
 
-.btn{
+.btn-custom{
    background-color: #ff7d00 !important;
    border: #ff7d00 !important;
    transition: background-color 0.3s ease, transform 0.3s ease;
+   color: white !important;
 }
 
-.btn:hover {
+.btn-custom:hover {
   background-color: #e07100 !important;
   transform: scale(1.1);
 
