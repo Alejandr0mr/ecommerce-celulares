@@ -8,3 +8,9 @@ footer{
 hr{
     color: black !important;
 }
+
+@media (max-width: 767px) {
+    img {
+      width: 6rem;
+    }
+  }
