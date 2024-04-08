@@ -69,7 +69,7 @@ function Signup() {
                                 </div>
 
                                 <div className="input-group mb-3 mt-3">
-                                    <button className="btn btn-lg btn-primary w-100 fs-6">Iniciar sesión</button>
+                                    <button className="btn btn-lg btn-primary w-100 fs-6">Registrarse</button>
                                 </div>
 
                             </form>
