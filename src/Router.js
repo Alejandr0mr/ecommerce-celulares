@@ -7,6 +7,7 @@ import Contacto from './pages/Contacto/Contacto'
 import Login from './pages/LogIn/Login';
 import Signup from './pages/SignUp/Signup';
 import DetalleCelular from './components/body/products/DetalleCelular/DetalleCelular';
+import DetalleAccesorio from './components/body/products/DetalleAccesorio/DetalleAccesorio';
 
 
 
@@ -21,6 +22,7 @@ function Router() {
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/signup" element={<Signup/>}/>
         <Route exact path="/celulares/:id" element={<DetalleCelular/>} />
+        <Route exact path="/accesorios/:id" element={<DetalleAccesorio/>} />
       </Routes>
     </HashRouter>
   );
