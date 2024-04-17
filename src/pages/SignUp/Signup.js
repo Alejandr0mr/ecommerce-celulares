@@ -46,7 +46,7 @@ function Signup() {
     };
 
     // Función para manejar el envío del formulario
-    const handleSubmit = async (values, { setErrors }) => {
+    const handleSubmit = async (values) => {
         try {
             // Envía los datos del formulario al servidor
             const response = await fetch('http://localhost:3001/registro-usuario', {
@@ -101,7 +101,7 @@ function Signup() {
     return (
         <div>
             <Header />
-            <div className="container d-flex justify-content-center align-items-center min-vh-100 body" style={{ margin: '100px 100px' }}>
+            <div className="container d-flex justify-content-center align-items-center min-vh-100 body">
                 <div className="row border rounded-5 p-3 bg-white shadow box-area">
                     <div className="col-md-12 right-box">
                         <div className="row align-items-center">
