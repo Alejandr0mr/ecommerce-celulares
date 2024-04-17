@@ -6,6 +6,8 @@ import Accesorios from './pages/Accesorios';
 import Contacto from './pages/Contacto/Contacto'
 import Login from './pages/LogIn/Login';
 import Signup from './pages/SignUp/Signup';
+import DetalleCelular from './components/body/products/DetalleCelular/DetalleCelular';
+
 
 
 function Router() {
@@ -18,6 +20,7 @@ function Router() {
         <Route exact path="/contacto" element={<Contacto/>}/>
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/signup" element={<Signup/>}/>
+        <Route exact path="/celulares/:id" element={<DetalleCelular/>} />
       </Routes>
     </HashRouter>
   );
