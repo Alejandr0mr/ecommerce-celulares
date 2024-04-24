@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import Header from './header/Header'
 import Footer from './footer/Footer'
 import Carousel from './carousel/Carousel'
@@ -8,6 +8,10 @@ import Informacion from './body/Secciones/Informacion/Informacion'
 
 
 function Index() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Desplazar la página hacia arriba cuando se carga
+  }, []);
+
   return (
     <div>
         <Header/>
