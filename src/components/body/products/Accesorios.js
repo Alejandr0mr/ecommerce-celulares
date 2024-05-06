@@ -1,6 +1,11 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 function Accesorios(props) {
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Desplazar la página hacia arriba cuando se carga
+      }, []);
+    
     return (
         <div className="card mb-2 text-center h-100">
             <img 

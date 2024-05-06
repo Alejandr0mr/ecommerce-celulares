@@ -5,6 +5,7 @@ import Header from '../../../header/Header';
 import Footer from '../../../footer/Footer';
 import Informacion from '../../Secciones/Informacion/Informacion';
 import './DetalleCelular.css'
+import { Link } from 'react-router-dom';
 
 function DetalleCelular() {
   const { id } = useParams();
@@ -45,6 +46,8 @@ function DetalleCelular() {
           </div>
           <div className='text-center py-2'>
           <button className='btn btn-success'>COMPRAR</button>
+          <Link to={`/accesorios`} className='text-decoration-none m-2'><button type="button" className="btn btn-primary">Añadir al carrito</button></Link>
+          
           </div>
         </div>
       </div>
