@@ -8,5 +8,15 @@
         "password": "Alejandro1*",
         "rol": "usuario",
         "fecha_creación": "2024-04-24T19:43:25.806Z"
+    },
+    {
+        "id": 2,
+        "nombre": "Alejandro ",
+        "apellido": "Martínez",
+        "email": "tortugal204@gmail.com",
+        "celular": "3046530494",
+        "password": "Alejandro1*",
+        "rol": "usuario",
+        "fecha_creación": "2024-05-06T01:48:07.759Z"
     }
 ]

@@ -73,7 +73,7 @@ function Signup() {
                 // Muestra un mensaje de error
                 Swal.fire({
                     title: 'No fue posible crear el usuario',
-                    text: `Error: ${response.status} - Correo o identificación invalidas`,
+                    text: `Error: ${response.status} Correo no valido`,
                     icon: 'error',
                     customClass: {
                         popup: 'my-custom-popup-class',

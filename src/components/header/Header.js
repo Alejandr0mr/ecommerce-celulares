@@ -7,9 +7,17 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import './HeaderStyles.css'
 import logo from './logo.png'
 import mi from './mi.ico'
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from '../login/LoginButton';
+import Profile from '../login/Profile';
+import LogoutButton from '../login/LogoutButton';
 
 
 function Navbar() {
+
+    const { user, isAuthenticated } = useAuth0()
+    
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg" id='nav'>
@@ -27,13 +35,13 @@ function Navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            
-                            <li className="nav-item">   
+
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/">Inicio</Link>
                             </li>
-                            
+
                             <li className="nav-item">
-                                <Link className="nav-link"  to="/celulares">Celulares</Link>
+                                <Link className="nav-link" to="/celulares">Celulares</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/accesorios">Accesorios</Link>
@@ -43,19 +51,28 @@ function Navbar() {
                             </li>
                         </ul>
                         <div className="d-flex align-items-center me-auto">
-                            <div className="iconoUsuario" title='Ingresar'>
-                                <Link className="nav-link"  to="/login"><FontAwesomeIcon icon={faUser}/></Link> 
-                                
-                            </div>
-                            <div className='iconoCarrito' title='Carrito de compras'>
-                                
-                                <Link className="nav-link"  to="#"><FontAwesomeIcon icon={faCartShopping} /></Link> 
-                            </div>
+                           
+
+            
+                           
                         </div>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
-                            <button className='btn btn-outline-primary btn-no-border mr-2'><FontAwesomeIcon icon={faMagnifyingGlass} className='lupa'/></button>
-                        </form>
+                        {
+                                isAuthenticated ?
+                                
+
+                                <React.Fragment>
+                                     <div className="iconoUser" title='Ingresar'>
+                                    <LogoutButton/>
+                                    </div>
+                              </React.Fragment>
+                                :
+                                <div className="iconoUsuario" title='Ingresar'>
+                                <LoginButton/>
+                            </div>
+                            }
+                         <div className='iconoCarrito' title='Carrito de compras'>
+                                <Link className="nav-link" to="#"><FontAwesomeIcon icon={faCartShopping} /></Link>
+                            </div>
                     </div>
                 </div>
             </nav>
