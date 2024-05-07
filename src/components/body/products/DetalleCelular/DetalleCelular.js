@@ -5,15 +5,22 @@ import Header from '../../../header/Header';
 import Footer from '../../../footer/Footer';
 import Informacion from '../../Secciones/Informacion/Informacion';
 import './DetalleCelular.css'
-import { Link } from 'react-router-dom';
+
+import { CartContext } from '../../../carrito/CartContext';
+import { useContext } from 'react';
 
 function DetalleCelular() {
   const { id } = useParams();
   const celular = data.find(item => item.id === parseInt(id));
+  const { addToCart } = useContext(CartContext);
 
   if (!celular) {
     return <div>No se encontró el celular</div>;
   }
+
+  const handleAddToCart = () => {
+    addToCart(celular);
+  };
 
   return (
     <div>
@@ -46,7 +53,13 @@ function DetalleCelular() {
           </div>
           <div className='text-center py-2'>
           <button className='btn btn-success'>COMPRAR</button>
-          <Link to={`/accesorios`} className='text-decoration-none m-2'><button type="button" className="btn btn-primary">Añadir al carrito</button></Link>
+          <button
+              type="button"
+              className="btn btn-primary m-2"
+              onClick={handleAddToCart}
+            >
+              Añadir al carrito
+            </button>
           
           </div>
         </div>

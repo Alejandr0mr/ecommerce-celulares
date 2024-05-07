@@ -8,6 +8,8 @@ import Login from './pages/LogIn/Login';
 import Signup from './pages/SignUp/Signup';
 import DetalleCelular from './components/body/products/DetalleCelular/DetalleCelular';
 import DetalleAccesorio from './components/body/products/DetalleAccesorio/DetalleAccesorio';
+import Cart from './components/carrito/Cart';
+import Carrito from './components/carrito/Carrito';
 
 
 
@@ -23,6 +25,9 @@ function Router() {
         <Route exact path="/signup" element={<Signup/>}/>
         <Route exact path="/celulares/:id" element={<DetalleCelular/>} />
         <Route exact path="/accesorios/:id" element={<DetalleAccesorio/>} />
+        <Route exact path="/cart" element={<Cart />}/>
+        <Route exact path="/carrito" element={<Carrito />}/>
+
       </Routes>
     </HashRouter>
   );

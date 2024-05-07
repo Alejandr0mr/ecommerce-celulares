@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -9,14 +9,23 @@ import logo from './logo.png'
 import mi from './mi.ico'
 import { useAuth0 } from '@auth0/auth0-react';
 import LoginButton from '../login/LoginButton';
-import Profile from '../login/Profile';
+// import Profile from '../login/Profile';
 import LogoutButton from '../login/LogoutButton';
+import { CartContext } from '../carrito/CartContext';
+
 
 
 function Navbar() {
 
     const { user, isAuthenticated } = useAuth0()
-    
+
+    const { cart } = useContext(CartContext);
+
+    const CartCounter = ({ count }) => (
+        <div className="cart-counter">
+            <span className="count">{count}</span>
+        </div>
+    );
 
     return (
         <div>
@@ -51,28 +60,30 @@ function Navbar() {
                             </li>
                         </ul>
                         <div className="d-flex align-items-center me-auto">
-                           
 
-            
-                           
+
+
+
                         </div>
                         {
-                                isAuthenticated ?
-                                
-
+                            isAuthenticated ?
                                 <React.Fragment>
-                                     <div className="iconoUser" title='Ingresar'>
-                                    <LogoutButton/>
+                                    <div className="iconoUser" title='Ingresar'>
+                                        <LogoutButton />
                                     </div>
-                              </React.Fragment>
+                                </React.Fragment>
                                 :
                                 <div className="iconoUsuario" title='Ingresar'>
-                                <LoginButton/>
-                            </div>
-                            }
-                         <div className='iconoCarrito' title='Carrito de compras'>
-                                <Link className="nav-link" to="#"><FontAwesomeIcon icon={faCartShopping} /></Link>
-                            </div>
+                                    <LoginButton />
+                                </div>
+                        }
+                        <div className="iconoCarrito" title="Carrito de compras">
+                            <Link className="nav-link" to="/carrito">
+                                <FontAwesomeIcon icon={faCartShopping} />
+                                <CartCounter count={cart.length} />
+                            </Link>
+                        </div>
+
                     </div>
                 </div>
             </nav>
