@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { CartContext } from './CartContext';
+import { Link } from 'react-router-dom';
+
 
 function Cart() {
 
@@ -7,7 +9,7 @@ function Cart() {
         window.scrollTo(0, 0); // Desplazar la página hacia arriba cuando se carga
     }, []);
 
-    const { cart, removeFromCart, clearCart } = useContext(CartContext);
+    const { cart, removeFromCart, clearCart, calculateTotal, formatPrice  } = useContext(CartContext);
 
     const handleRemoveFromCart = (productId) => {
         removeFromCart(productId);
@@ -17,7 +19,7 @@ function Cart() {
         clearCart();
     };
 
-    const total = cart.reduce((acc, product) => acc + product.precio, 0);
+    
 
     return (
         <div className="container">
@@ -33,7 +35,7 @@ function Cart() {
                                     <img src={product.imagen} className="card-img-top" alt={product.nombre} />
                                     <div className="card-body">
                                         <h5 className="card-title">{product.nombre}</h5>
-                                        <p className="card-text">Precio: ${product.precio}</p>
+                                        <p className="card-text">Precio: ${formatPrice(product.precio)}</p>
                                         <button
                                             type="button"
                                             className="btn btn-danger"
@@ -50,10 +52,10 @@ function Cart() {
                         <button className="btn btn-danger me-3" onClick={handleClearCart}>
                             Vaciar carrito
                         </button>
-                        <button className="btn btn-success me-3">
+                        <Link to="/pasarela"><button className="btn btn-success me-3">
                             PAGAR
-                        </button>
-                        <h4>Total: ${total} COP</h4>
+                        </button></Link>
+                        <h4>Total: ${formatPrice(calculateTotal())} COP</h4>
                     </div>
                 </div>
             )}

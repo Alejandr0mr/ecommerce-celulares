@@ -17,8 +17,18 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
+  const calculateTotal = () => {
+    return cart.reduce((total, item) => {
+      return total + parseFloat(item.precio);
+    }, 0);
+  };
+
+  const formatPrice = (price) => {
+    return parseFloat(price).toLocaleString();
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, calculateTotal, formatPrice  }}>
       {children}
     </CartContext.Provider>
   );
