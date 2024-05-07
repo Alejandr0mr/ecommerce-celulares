@@ -8,22 +8,30 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 function Celulares(props) {
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
-  const { addToCart } = useContext(CartContext);
-
+  const { addToCart } = useContext(CartContext); // Extract addToCart function
   const handleLogin = () => {
     loginWithRedirect();
   };
 
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "bottom-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
   const handleAddToCart = () => {
     if (isAuthenticated) {
-      Swal.fire({
-        position: "top-end",
+      Toast.fire({
         icon: "success",
-        title: "¡Artículo añadido al carrito!",
-        showConfirmButton: false,
-        timer: 1000
-      })
-      addToCart(props.items);
+        title: `${props.item.nombre} fue añadido a tu carrito`
+      });
+      addToCart(props.item);
     } else {
       Swal.fire({
         title: "Inicia sesión para comprar",

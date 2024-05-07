@@ -18,17 +18,27 @@ function Accesorios(props) {
     const handleLogin = () => {
         loginWithRedirect();
       };
+
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
     
       const handleAddToCart = () => {
         if (isAuthenticated) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "¡Artículo añadido al carrito!",
-            showConfirmButton: false,
-            timer: 1000
-          })
-          addToCart(props.items);
+            Toast.fire({
+                icon: "success",
+                title: `${props.item.nombre} fue añadido a tu carrito`
+              });
+          addToCart(props.item);
         } else {
           Swal.fire({
             title: "Inicia sesión para comprar",

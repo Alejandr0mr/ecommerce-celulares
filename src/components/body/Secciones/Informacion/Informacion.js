@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import './Informacion.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import proteccion from './img/proteccion.png';
@@ -8,6 +8,12 @@ import master from './img/mastercard-4.svg';
 import buenprecio from './img/mejor-precio.png';
 
 function Informacion() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Desplazar la página hacia arriba cuando se carga
+    }, []);
+
+
     return (
         <div>
             <div className='divSeccion'>
