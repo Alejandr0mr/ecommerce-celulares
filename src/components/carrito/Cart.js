@@ -28,8 +28,8 @@ function Cart() {
                 <div>
                     <div className="row">
                         {cart.map((product) => (
-                            <div key={product.id} className="col-md-4 mb-4">
-                                <div className="card">
+                            <div key={product.id} className="col-md-3 mb-4">
+                                <div className="card text-center h-100">
                                     <img src={product.imagen} className="card-img-top" alt={product.nombre} />
                                     <div className="card-body">
                                         <h5 className="card-title">{product.nombre}</h5>
