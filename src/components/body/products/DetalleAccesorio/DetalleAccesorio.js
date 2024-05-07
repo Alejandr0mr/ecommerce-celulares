@@ -6,7 +6,13 @@ import Footer from '../../../footer/Footer';
 import Informacion from '../../Secciones/Informacion/Informacion';
 import { CartContext } from '../../../carrito/CartContext';
 
+import { useAuth0 } from "@auth0/auth0-react";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
+
+
 function DetalleAccesorio() {
+    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const { id } = useParams();
   const accesorio = data.find(item => item.id === parseInt(id));
   const { addToCart } = useContext(CartContext);
@@ -16,8 +22,35 @@ function DetalleAccesorio() {
     return <div>No se encontró el accesorio</div>;
   }
 
+  const handleLogin = () => {
+    loginWithRedirect();
+  };
+
   const handleAddToCart = () => {
-    addToCart(accesorio);
+    if (isAuthenticated) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "¡Artículo añadido al carrito!",
+        showConfirmButton: false,
+        timer: 1000
+      })
+      addToCart(accesorio);
+    } else {
+      Swal.fire({
+        title: "Inicia sesión para comprar",
+        showDenyButton: true,
+        showCancelButton: false,
+        denyButtonColor: "#FF0000",
+        confirmButtonColor: "#157347",
+        confirmButtonText: "Iniciar Sesión",
+        denyButtonText: "Seguir viendo"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          handleLogin();
+        }
+      });
+    }
   };
 
   return (

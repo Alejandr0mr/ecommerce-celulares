@@ -1,7 +1,12 @@
 import { React, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../carrito/CartContext';
+import { useAuth0 } from "@auth0/auth0-react";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 function Accesorios(props) {
+
+    const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
     useEffect(() => {
         window.scrollTo(0, 0); // Desplazar la página hacia arriba cuando se carga
@@ -10,10 +15,36 @@ function Accesorios(props) {
 
     const { addToCart } = useContext(CartContext);
 
-    const handleAddToCart = () => {
-        addToCart(props.item);
-    };
-
+    const handleLogin = () => {
+        loginWithRedirect();
+      };
+    
+      const handleAddToCart = () => {
+        if (isAuthenticated) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "¡Artículo añadido al carrito!",
+            showConfirmButton: false,
+            timer: 1000
+          })
+          addToCart(props.items);
+        } else {
+          Swal.fire({
+            title: "Inicia sesión para comprar",
+            showDenyButton: true,
+            showCancelButton: false,
+            denyButtonColor: "#FF0000",
+            confirmButtonColor: "#157347",
+            confirmButtonText: "Iniciar Sesión",
+            denyButtonText: "Seguir viendo"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              handleLogin();
+            }
+          });
+        }
+      };
     return (
         <div className="card mb-2 text-center h-100">
             <img

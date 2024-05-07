@@ -9,7 +9,12 @@ import './DetalleCelular.css'
 import { CartContext } from '../../../carrito/CartContext';
 import { useContext } from 'react';
 
+import { useAuth0 } from "@auth0/auth0-react";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
+
 function DetalleCelular() {
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const { id } = useParams();
   const celular = data.find(item => item.id === parseInt(id));
   const { addToCart } = useContext(CartContext);
@@ -18,8 +23,35 @@ function DetalleCelular() {
     return <div>No se encontró el celular</div>;
   }
 
+  const handleLogin = () => {
+    loginWithRedirect();
+  };
+
   const handleAddToCart = () => {
-    addToCart(celular);
+    if (isAuthenticated) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "¡Artículo añadido al carrito!",
+        showConfirmButton: false,
+        timer: 1000
+      })
+      addToCart(celular);
+    } else {
+      Swal.fire({
+        title: "Inicia sesión para comprar",
+        showDenyButton: true,
+        showCancelButton: false,
+        denyButtonColor: "#FF0000",
+        confirmButtonColor: "#157347",
+        confirmButtonText: "Iniciar Sesión",
+        denyButtonText: "Seguir viendo"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          handleLogin();
+        }
+      });
+    }
   };
 
   return (
