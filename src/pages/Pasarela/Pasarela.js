@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'; // Importa component
 import * as Yup from 'yup'; // Importa Yup para validación de esquemas
 import Header from '../../components/header/Header'; // Importa el componente Header
 import Footer from '../../components/footer/Footer'; // Importa el componente Footer
-import './SignupStyles.css'; // Importa estilos específicos para este componente
+import './PasarelaStyles.css'; // Importa estilos específicos para este componente
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importa FontAwesomeIcon
 import { faEnvelope, faLock, faUser, faUserPlus, faMobileScreen, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'; // Importa iconos de FontAwesome
 import { Link } from 'react-router-dom'; // Importa Link de react-router-dom para navegación entre páginas
@@ -34,7 +34,7 @@ const SignupSchema = Yup.object().shape({
         .required('Debe confirmar la contraseña'),
 });
 
-function Signup() {
+function Pasarela() {
     // Encargado del estado del ojo para mostrar la contraseña
     const [showPassword, setShowPassword] = useState(false);
     // Referencia a Formik para resetear el formulario después del envío exitoso
@@ -224,4 +224,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default Pasarela;

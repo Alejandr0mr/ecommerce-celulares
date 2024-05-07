@@ -50,6 +50,9 @@ function Cart() {
                         <button className="btn btn-danger me-3" onClick={handleClearCart}>
                             Vaciar carrito
                         </button>
+                        <button className="btn btn-success me-3">
+                            PAGAR
+                        </button>
                         <h4>Total: ${total} COP</h4>
                     </div>
                 </div>
