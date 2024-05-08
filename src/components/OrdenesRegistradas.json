@@ -13,5 +13,37 @@
         "total": 2199900,
         "estado": "confirmado",
         "fecha_creación": "2024-05-08T00:45:33.364Z"
+    },
+    {
+        "id": 2,
+        "nombre": "Alejandro Martínez",
+        "correo": "tortugal2004@gmail.com",
+        "pais": "Colombia",
+        "ciudad": "Colombia",
+        "direccion": "Centro",
+        "telefono": "3046530494",
+        "tarjeta": "1234567890123456",
+        "codigo": "123",
+        "fechaVencimiento": "06/12",
+        "total": 4599800,
+        "estado": "confirmado",
+        "productos": "Redmi Note 13 Pro+ 5G, POCO X5 5G",
+        "fecha_creación": "2024-05-08T01:18:45.728Z"
+    },
+    {
+        "id": 3,
+        "nombre": "Alejandro Martínez",
+        "correo": "tortugal2004@gmail.com",
+        "pais": "Colombia",
+        "ciudad": "Colombia",
+        "direccion": "Centro",
+        "telefono": "3046530494",
+        "tarjeta": "1234567890123456",
+        "codigo": "123",
+        "fechaVencimiento": "06/12",
+        "total": 20599300,
+        "estado": "confirmado",
+        "productos": "Redmi Note 13 Pro+ 5G, POCO X5 5G, Redmi Note 11T Pro+ 5G, Redmi Note 12 Pro, Xiaomi 12S Ultra, Xiaomi 13 Pro, Poco X4 Pro 5G",
+        "fecha_creación": "2024-05-08T01:20:57.683Z"
     }
 ]

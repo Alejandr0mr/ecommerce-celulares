@@ -13,6 +13,7 @@ import {
   faMapMarkerAlt,
   faCreditCard,
   faCalendarAlt,
+  faShoppingCart
 } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -42,75 +43,73 @@ const PasarelaSchema = Yup.object().shape({
 
 function Pasarela() {
   const { user } = useAuth0();
-  const { calculateTotal, formatPrice } = useContext(CartContext);
-
+  const { calculateTotal, formatPrice, cartProducts, clearCart } = useContext(CartContext);
 
   const handleSubmit = async (values) => {
     console.log("Formulario enviado");
     try {
-        // Enviar la solicitud POST
-        const response = await fetch("http://localhost:3001/orden", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: JSON.stringify(values),
+      // Enviar la solicitud POST
+      const response = await fetch("http://localhost:3001/orden", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      // Manejar la respuesta
+      if (response.ok) {
+        // La solicitud se realizó correctamente
+        const data = await response.text(); // Obtén el mensaje del servidor
+        console.log("Respuesta del servidor:", data);
+        // Mostrar la alerta de éxito con el mensaje del servidor
+        Swal.fire({
+          title: "Orden realizada con éxito",
+          text: data,
+          icon: "success",
+          customClass: {
+            popup: "my-custom-popup-class",
+          },
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+            clearCart()
+            window.location.href = '/';
         });
-
-        // Manejar la respuesta
-        if (response.ok) {
-            // La solicitud se realizó correctamente
-            const data = await response.text(); // Obtén el mensaje del servidor
-            console.log("Respuesta del servidor:", data);
-            // Mostrar la alerta de éxito con el mensaje del servidor
-            Swal.fire({
-                title: "Orden realizada con éxito",
-                text: data,
-                icon: "success",
-                customClass: {
-                    popup: "my-custom-popup-class",
-                },
-                showConfirmButton: false,
-                timer: 1500,
-            });
-            // Resetear el formulario
-            window.location.hash = '/'
-        } else {
-            // Ocurrió un error en la solicitud
-            console.error("Error en la solicitud:", response.status);
-            // Mostrar la alerta de error con el mensaje del servidor
-            const errorData = await response.text(); // Obtén el mensaje de error del servidor
-            Swal.fire({
-                title: "No fue posible realizar la orden",
-                text: errorData,
-                icon: "error",
-                customClass: {
-                    popup: "my-custom-popup-class",
-                },
-                showConfirmButton: true,
-                timer: 4500,
-            });
-        }
+        
+      } else {
+        // Ocurrió un error en la solicitud
+        console.error("Error en la solicitud:", response.status);
+        // Mostrar la alerta de error con el mensaje del servidor
+        const errorData = await response.text(); // Obtén el mensaje de error del servidor
+        Swal.fire({
+          title: "No fue posible realizar la orden",
+          text: errorData,
+          icon: "error",
+          customClass: {
+            popup: "my-custom-popup-class",
+          },
+          showConfirmButton: true,
+          timer: 4500,
+        });
+      }
     } catch (error) {
-        console.error("Error en la solicitud:", error);
+      console.error("Error en la solicitud:", error);
 
-        if(error == 500){
-            Swal.fire({
-                title: "No fue posible finalizar el proceso de orden por un error",
-                text: `Error: ${error}`,
-                icon: "error",
-                customClass: {
-                    popup: "my-custom-popup-class",
-                },
-                showConfirmButton: false,
-                timer: 1500,
-            });
-        }
-       
+      if (error == 500) {
+        Swal.fire({
+          title: "No fue posible finalizar el proceso de orden por un error",
+          text: `Error: ${error}`,
+          icon: "error",
+          customClass: {
+            popup: "my-custom-popup-class",
+          },
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
     }
-
-
   };
 
   return (
@@ -135,6 +134,7 @@ function Pasarela() {
                   codigo: "",
                   fechaVencimiento: "",
                   total: calculateTotal(),
+                  productos: cartProducts.join(', ')
                 }}
                 validationSchema={PasarelaSchema}
                 onSubmit={handleSubmit}
@@ -298,9 +298,8 @@ function Pasarela() {
                       </div>
                     </div>
                     <div className="mb-3">
-                    <p>Total:</p>
+                      <p>Total:</p>
                       <div className="input-group">
-                        
                         <Field
                           type="text"
                           name="total"
@@ -311,10 +310,27 @@ function Pasarela() {
                         />
                       </div>
                     </div>
+
+                    <div className="mb-3">
+                        <p>Productos:</p>
+                      <div className="input-group">
+                        <span className="input-group-text">
+                          <FontAwesomeIcon icon={faShoppingCart} />
+                        </span>
+                        <Field
+                          type="text"
+                          name="productos"
+                          className="form-control form-control-lg bg-light fs-6"
+                          placeholder="Productos"
+                          disabled
+                        />
+                      </div>
+                    </div>
                     <div className="input-group mb-3 mt-3">
-                      <button 
+                      <button
                         type="submit"
-                        className="btn btn-lg btn-primary w-100 fs-6">
+                        className="btn btn-lg btn-primary w-100 fs-6"
+                      >
                         Realizar Pago
                       </button>
                     </div>

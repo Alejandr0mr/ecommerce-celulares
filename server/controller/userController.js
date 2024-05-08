@@ -97,8 +97,8 @@ const controller = {
                 codigo: req.body.codigo,
                 fechaVencimiento: req.body.fechaVencimiento,
                 total: req.body.total,
-                cart: req.body.cart, // Agregar el cart al objeto OrdenNueva
                 estado: "confirmado",
+                productos: req.body.productos,
                 fecha_creación: new Date()
             };
             orden.push(OrdenNueva);

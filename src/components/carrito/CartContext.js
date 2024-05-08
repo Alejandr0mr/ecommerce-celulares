@@ -27,8 +27,10 @@ export const CartProvider = ({ children }) => {
     return parseFloat(price).toLocaleString();
   };
 
+  const cartProducts = cart.map((product) => product.nombre);
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, calculateTotal, formatPrice  }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, calculateTotal, formatPrice, cartProducts  }}>
       {children}
     </CartContext.Provider>
   );
