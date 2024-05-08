@@ -194,7 +194,7 @@
     
   }
 .navbar-nav .nav-link, .iconoCarrito,  .iconoUsuario, .titulo .navbar-brand, .lupa {
-    color: black !important; /* Cambia el color del texto a blanco */
+    color: black !important; /* Cambia el color del texto a negro */
   }
 
 
@@ -239,3 +239,87 @@
   padding: 2px 6px;
   font-size: 12px;
 }   
+
+@media (max-width: 990px) {
+  .navbar-collapse {
+    background-color: #ff7d00; /* Cambia el color de fondo del menú colapsado */
+    padding: 1rem; /* Agrega un poco de espaciado interno */
+  }
+
+  .navbar-nav .nav-link {
+
+    color: black !important; /* Cambia el color de los enlaces */
+  }
+
+  .iconoUsuario,
+  .iconoCarrito,
+  .iconoUser{
+    margin-top: 1rem; /* Agrega un poco de espacio superior a los íconos */
+  }
+
+
+  .iconoUsuario,
+  .iconoUser {
+    margin-top: 0  !important; /* Agrega esta línea */
+  }
+
+  .cart-counter {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .count {
+    position: absolute;
+    top: -5px; /* Ajusta la posición vertical */
+    right: -15px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+  .iconoUsuario:hover,
+  .iconoCarrito:hover,
+  .iconoUser:hover,
+  .navbar-nav .nav-link:hover {
+    transform: none; /* Elimina la transformación de escala */
+    color: black !important; /* Mantiene el color original del texto */
+  }
+
+  /* Ocultar texto de los íconos */
+  .iconoCarrito::after,
+  .iconoUsuario::after,
+  .iconoUser::after {
+    display: none; /* Oculta el texto de los íconos */
+    margin-top: 0%;
+  }
+
+  .iconoCarrito{
+    padding: 0;
+  }
+
+  .iconoUser::before {
+    content: "Cerrar sesión"; /* Agrega el texto que deseas mostrar */
+    position: absolute; /* Establece la posición absoluta con respecto al icono */
+    top: 50%; /* Ubica el texto en la mitad verticalmente */
+    left: calc(2% + 30px); /* Lo coloca a la derecha del icono con un pequeño espacio */
+    transform: translateY(-50%); /* Centra verticalmente el texto */
+    padding:  3px; /* Agrega un poco de espacio alrededor del texto */
+    background-color: transparent; /* Color de fondo del texto */
+    border-radius: 3px; /* Añade bordes redondeados al contenedor del texto */
+    font-size: 20px; /* Tamaño de la fuente */
+    margin-top: 0;
+  }
+
+  .iconoUsuario::before {
+    content: "Ingresar"; /* Agrega el texto que deseas mostrar */
+    position: absolute; /* Establece la posición absoluta con respecto al icono */
+    top: 50%; /* Ubica el texto en la mitad verticalmente */
+    left: calc(2% + 20px); /* Lo coloca a la derecha del icono con un pequeño espacio */
+    transform: translateY(-50%); /* Centra verticalmente el texto */
+    padding: 3px; /* Agrega un poco de espacio alrededor del texto */
+    background-color: transparent; /* Color de fondo del texto */
+    border-radius: 3px; /* Añade bordes redondeados al contenedor del texto */
+    font-size: 20px; /* Tamaño de la fuente */
+  }
+}
