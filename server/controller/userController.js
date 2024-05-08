@@ -97,7 +97,7 @@ const controller = {
                 codigo: req.body.codigo,
                 fechaVencimiento: req.body.fechaVencimiento,
                 total: req.body.total,
-                estado: "confirmado",
+                estado: "Activo",
                 productos: req.body.productos,
                 fecha_creación: new Date()
             };

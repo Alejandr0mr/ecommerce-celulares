@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Index from './components/Index';
 import Celulares from './pages/Celulares';
 import Accesorios from './pages/Accesorios';
@@ -10,10 +10,17 @@ import DetalleAccesorio from './components/body/products/DetalleAccesorio/Detall
 import Cart from './components/carrito/Cart';
 import Carrito from './components/carrito/Carrito';
 import Pasarela from './pages/Pasarela/Pasarela';
-
+import Reporte from './components/reportes/Reporte'
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 function Router() {
+  const { user, isAuthenticated } = useAuth0();
+  const email = user?.email;
+  const adminEmails = ["tortugal2004@gmail.com"];
+  const isAdmin = isAuthenticated && adminEmails.includes(email);
+
+
   return (
     <HashRouter>
       <Routes>
@@ -27,7 +34,7 @@ function Router() {
         <Route exact path="/accesorios/:id" element={<DetalleAccesorio/>} />
         <Route exact path="/cart" element={<Cart />}/>
         <Route exact path="/carrito" element={<Carrito />}/>
-
+        <Route path='/reporte' element={isAdmin ? <Reporte/> : <Navigate to="/" />} />
       </Routes>
     </HashRouter>
   );
