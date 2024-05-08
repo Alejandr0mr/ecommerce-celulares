@@ -14,6 +14,7 @@ import LogoutButton from "../login/LogoutButton";
 import { CartContext } from "../carrito/CartContext";
 
 function Navbar() {
+  //Validación para las rutas
   const { user, isAuthenticated } = useAuth0();
   const email = user?.email;
   const adminEmails = ["tortugal2004@gmail.com"];
@@ -85,6 +86,7 @@ function Navbar() {
               )}
             </ul>
             <div className="d-flex align-items-center me-auto"></div>
+            
             {isAuthenticated ? (
               <React.Fragment>
                 <div className="iconoUser" title="Ingresar">

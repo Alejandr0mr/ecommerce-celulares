@@ -19,6 +19,7 @@ import Swal from "sweetalert2";
 import { useAuth0 } from "@auth0/auth0-react";
 import { CartContext } from "../../components/carrito/CartContext";
 
+//Validaciones con la libreria de yup
 const PasarelaSchema = Yup.object().shape({
   nombre: Yup.string()
     .min(3, "El nombre debe tener al menos 3 caracteres")

@@ -16,7 +16,6 @@ function Index() {
     <div>
         <Header/>
         <Carousel/>
-
         <Destacado/>
         <Accesorios/>
         <Informacion/>

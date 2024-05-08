@@ -8,6 +8,7 @@ function LoginButton() {
 
     const { loginWithRedirect } = useAuth0()
   return (
+    //botón para inicar sesión
     <div>
          <Link className="nav-link" onClick={() => loginWithRedirect()}><FontAwesomeIcon icon={faUser} /></Link>
     </div>
