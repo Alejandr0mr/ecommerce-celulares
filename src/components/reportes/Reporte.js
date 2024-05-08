@@ -9,6 +9,7 @@ function Reporte() {
       <Header />
       <div className="container " style={{ marginTop: '100px' }}>
         <h1 className="text-center mb-4">Reporte de Usuarios</h1>
+        <div className="table-responsive">
         <table className="table table-striped table-bordered table-hover">
           <thead className="table-dark">
             <tr>
@@ -51,6 +52,7 @@ function Reporte() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
       <Footer />
     </div>
