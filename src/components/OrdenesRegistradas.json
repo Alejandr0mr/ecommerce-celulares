@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "nombre": "Alejandro Martínez",
+        "correo": "tortugal2004@gmail.com",
+        "pais": "Colombia",
+        "ciudad": "Colombia",
+        "direccion": "123",
+        "telefono": "3046530494",
+        "tarjeta": "1234567890123456",
+        "codigo": "123",
+        "fechaVencimiento": "06/12",
+        "total": 2199900,
+        "estado": "confirmado",
+        "fecha_creación": "2024-05-08T00:45:33.364Z"
+    }
+]

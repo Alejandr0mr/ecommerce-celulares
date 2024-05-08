@@ -11,10 +11,13 @@ app.get("/", (req, res) => {
     res.send(userJSON);
 });
 
-const userController = require("./controller/userController"); // Renombra 'user' a 'userController'
-app.post('/registro-usuario', userController.register); // Usa 'app.post' para el registro de usuario
-app.use('/login', userController.login)// Usa 'app.post' para el inicio de sesión
-app.use('/orden', userController.orden)  
+const userController = require("./controller/userController");
+// app.post('/registro-usuario', userController.register);
+// app.use('/login', userController.login)
+app.post('/orden', userController.orden)  //Enviamos por el app.post los datos de la orden al controlador.
+
+
+//Visualización del puerto.
 const PORT = 3001;
 app.listen(PORT, () => {
     console.log("Servidor corriendo en el puerto ", PORT);

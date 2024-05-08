@@ -1,10 +1,11 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-
-const userFilePath = path.join(__dirname, '../../src/components/usuariosRegistrados.json');
+const userFilePath = path.join(__dirname, '../../src/components/OrdenesRegistradas.json');
 
 const controller = {
+
+    // register no funcional.
     register: async function (req, res) {
         try {
             // Leer el archivo JSON una sola vez
@@ -41,23 +42,73 @@ const controller = {
         }
     },
 
+    // login no funcional.
     login: async function (req, res) {
         try {
-            const usersData = await fs.readFile(userFilePath, 'utf-8');
-            const users = JSON.parse(usersData);
+            // Leer el archivo JSON una sola vez
+            const OrdenData = await fs.readFile(userFilePath, 'utf-8');
+            const orden = JSON.parse(OrdenData);
+            const ultimo = orden.length;
+            const OrdenNueva = {
+                id: ultimo + 1,   
+                nombre: req.body.nombre,
+                correo: req.body.correo,
+                pais: req.body.pais,
+                ciudad: req.body.pais,
+                direccion: req.body.direccion,
+                telefono: req.body.telefono,
+                tarjeta: req.body.tarjeta,
+                codigo: req.body.codigo,
+                fechaVencimiento: req.body.fechaVencimiento,
+                total: req.body.total,
+                estado: "confirmado",
+                fecha_creación: new Date()
+            };
+            orden.push(OrdenNueva);
 
-            for (x of users) {
-                if (x.email === req.body.email && x.password === req.body.password) {
-                    res.status(200).send("Ok")
-                    return
-                }
-            }
-            res.status(401).send('Credenciales incorrectas')
+            // Escribir el archivo JSON
+            orden.push(OrdenNueva);
+            // Escribir el archivo JSON
+            await fs.writeFile(userFilePath, JSON.stringify(orden, null, 4));
+            res.status(200).send('Orden creada correctamente'); // Agrega un mensaje de éxito
+            
+        } catch (error) {
+            console.error('Error al procesar la orden:', error);
+            res.status(500).send('Error interno del servidor'); // Agrega un mensaje de error
         }
-        
+    },
 
-        catch (error) {
-            console.error('Error al procesar el registro:', error);
+
+    orden: async function (req, res) {
+        try {
+            // Leer el archivo JSON una sola vez
+            const OrdenData = await fs.readFile(userFilePath, 'utf-8');
+            const orden = JSON.parse(OrdenData);
+            const ultimo = orden.length;
+            const OrdenNueva = {
+                id: ultimo + 1,   
+                nombre: req.body.nombre,
+                correo: req.body.correo,
+                pais: req.body.pais,
+                ciudad: req.body.pais,
+                direccion: req.body.direccion,
+                telefono: req.body.telefono,
+                tarjeta: req.body.tarjeta,
+                codigo: req.body.codigo,
+                fechaVencimiento: req.body.fechaVencimiento,
+                total: req.body.total,
+                cart: req.body.cart, // Agregar el cart al objeto OrdenNueva
+                estado: "confirmado",
+                fecha_creación: new Date()
+            };
+            orden.push(OrdenNueva);
+
+            // Escribir el archivo JSON
+            await fs.writeFile(userFilePath, JSON.stringify(orden, null, 4));
+
+            res.status(200).send('Orden creada correctamente');
+        } catch (error) {
+            console.error('Error al procesar la orden:', error);
             res.status(500).send('Error interno del servidor');
         }
     }
