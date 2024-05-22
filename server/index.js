@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send(userJSON);
+    res.send("Saludando por el back");
 });
 
 const userController = require("./controller/userController");
