@@ -9,7 +9,7 @@ import './FooterStyle.css'
 
 function Footer() {
   return (
-    <footer className=' text-dark pt-5 pb-4'>
+    <footer  className='footer text-dark pt-5 pb-4'>
       <div className='container text-center text-md-start text-dark'> 
         <hr className='mb-4' />
         <div className='row justify-content-center text-md-start align-items-center'>

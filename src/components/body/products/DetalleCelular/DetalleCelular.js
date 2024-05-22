@@ -93,7 +93,6 @@ function DetalleCelular() {
             </div>
           </div>
           <div className='text-center py-2'>
-          <button className='btn btn-success'>COMPRAR</button>
           <button
               type="button"
               className="btn btn-primary m-2"
