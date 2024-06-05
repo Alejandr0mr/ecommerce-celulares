@@ -164,7 +164,7 @@ const controller = {
 
       // Realizar solicitud PUT
       const configPut = {
-        method: "PUT",
+        method: "GET",
         url: "https://api.jsonbin.io/v3/b/664e413dacd3cb34a84c01ea",
         headers: {
           "Content-Type": "Application/json",
