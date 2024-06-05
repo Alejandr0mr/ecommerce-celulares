@@ -149,7 +149,7 @@ const controller = {
         nombre: req.body.nombre,
         correo: req.body.correo,
         pais: req.body.pais,
-        ciudad: req.body.pais,
+        ciudad: req.body.ciudad,
         direccion: req.body.direccion,
         telefono: req.body.telefono,
         tarjeta: req.body.tarjeta,
