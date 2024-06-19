@@ -128,7 +128,7 @@ app.use(cors());
 app.use(express.json()); // Agregar esta línea para analizar cuerpos JSON
 
 const controller = {
-  /* orden: async function (req, res) {
+  orden1: async function (req, res) {
     try {
       // Realizar solicitud GET
       let config = {
@@ -184,7 +184,7 @@ const controller = {
       console.error('Error al procesar la orden:', error);
       res.status(500).send('Error interno del servidor');
     }
-  } */
+  },
 
     //PARA REGISTRAR EN LA BD
     orden: async function (req, res) {
