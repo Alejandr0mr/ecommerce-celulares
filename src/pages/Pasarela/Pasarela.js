@@ -50,7 +50,7 @@ function Pasarela() {
     console.log("Formulario enviado");
     try {
       // Enviar la solicitud POST
-      const response = await fetch("http://localhost:3001/orden", {
+      const response = await fetch("https://ecommerce-celulares-back.onrender.com/orden", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
