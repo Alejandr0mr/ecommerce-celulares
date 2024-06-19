@@ -122,12 +122,13 @@ const express = require("express");
 const app = express();
 const axios = require('axios');
 const cors = require("cors");
+const conexion = require('../configBD.js');
 
 app.use(cors());
 app.use(express.json()); // Agregar esta línea para analizar cuerpos JSON
 
 const controller = {
-  orden: async function (req, res) {
+  /* orden: async function (req, res) {
     try {
       // Realizar solicitud GET
       let config = {
@@ -183,6 +184,24 @@ const controller = {
       console.error('Error al procesar la orden:', error);
       res.status(500).send('Error interno del servidor');
     }
+  } */
+
+    //PARA REGISTRAR EN LA BD
+    orden: async function (req, res) {
+      const { nombre, correo, pais, ciudad, direccion, telefono, tarjeta, codigo, fechaVencimiento, total, productos } = req.body;
+
+      try {
+          // Insertar la nueva orden
+          const result = await conexion.promise().query(
+              'INSERT INTO Compras (nombre, correo, pais, ciudad, direccion, telefono, tarjeta, codigo, fechaVencimiento, total, estado, productos) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+              [nombre, correo, pais, ciudad, direccion, telefono, tarjeta, codigo, fechaVencimiento, total, 'Activo', JSON.stringify(productos)]
+          );
+
+          res.status(200).send('Orden creada correctamente');
+      } catch (error) {
+          console.error('Error al procesar la orden:', error);
+          res.status(500).send('Error interno del servidor');
+      }
   }
 };
 

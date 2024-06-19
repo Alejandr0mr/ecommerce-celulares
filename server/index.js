@@ -8,6 +8,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+
+//Solicitamos la conexión a la BD
+const conexion = require('./configBD.js')
+
+app.get("/todos-las-Compras", (req, res) => {
+    conexion.connect(function (err) {
+        if (err) throw err;
+        //Select all customers and return the result object:
+        conexion.query("SELECT * FROM sql10714791.Compras", function (err, result, fields) {
+            if (err) throw err;
+            res.send(result)
+        });
+    });
+})
+
 app.get("/", async (req, res) => {
     try {
         // Enviar una respuesta inicial
