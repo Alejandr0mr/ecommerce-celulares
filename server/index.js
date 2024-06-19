@@ -52,7 +52,7 @@ const userController = require("./controller/userController");
 
 // app.post('/registro-usuario', userController.register);
 // app.use('/login', userController.login);
-app.post('/orden', userController.orden);  // Enviamos por el app.post los datos de la orden al controlador.
+app.post('/registro-usuario', userController.orden);  // Enviamos por el app.post los datos de la orden al controlador.
 
 // Visualización del puerto.
 const PORT = 3001;
